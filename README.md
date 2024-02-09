@@ -14,9 +14,9 @@ npm install @slushman/react-modal
 
 ## Dependencies
 
-React
-css.gg
-Tailwind
+- React
+- css.gg
+- Tailwind
 
 ## Example usage
 
