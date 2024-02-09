@@ -21,6 +21,8 @@ npm install @slushman/react-modal
 ## Example usage
 
 ```js
+import { Modal, useModal } from '@slushman/react-modal'
+
 const { isVisible, toggleModal } = useModal();
 
 <Modal isOpen={isVisible} onClose={toggleModal}>
