@@ -1,0 +1,94 @@
+{
+  "name": "@slushman/react-modal",
+  "description": "A modal for React using an HTML dialog",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slushman/react-modal.git"
+  },
+  "author": "Chris Wilcoxson <chris@slushman.com>",
+  "license": "MIT",
+  "homepage": "https://www.slushman.com/project/react-modal",
+  "bugs": "https://github.com/slushman/react-modal/issues",
+  "private": false,
+  "version": "1.1.0",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "css.gg": "^2.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vite-plugin-dts": "^3.7.2"
+  },
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "declaration": true,
+    "jsx": "react-jsx",
+    "typeRoots": [
+      "./dist/index.d.ts"
+    ],
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "lib"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
