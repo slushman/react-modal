@@ -1,16 +1,18 @@
 import { KeyboardEvent, PropsWithChildren, useEffect, useRef } from "react";
 import "css.gg/icons/css/close.css";
 
+import "./index.css";
+
 type Classes = {
-  dialog?: string;
-  wrapper?: string;
-  header?: string;
-  title?: string;
   button?: string;
   closeIcon?: string;
+  dialog?: string;
+  header?: string;
+  title?: string;
+  wrapper?: string;
 };
 
-interface ModalProps {
+export interface ModalProps {
   classes?: Classes;
   closeButtonAriaLabel?: string;
   isOpen: boolean;
@@ -56,29 +58,11 @@ export const Modal = ({
 
   return (
     <dialog
-      className={`
-        absolute
-        backdrop:bg-modal-bg
-        border
-        duration-200
-        ease-in
-        flex
-        flex-col
-        hover:duration-75
-        inset-0
-        items-center
-        justify-center
-        ${isOpen ? "opacity-1" : "opacity-0"}
-        overflow-hidden
-        ${isOpen ? "pointer-events-auto" : "pointer-events-none"}
-        rounded-lg
-        text-white
-        transition-opacity
-        z-50
-        ${type === "full" ? "h-screen" : ""}
-        ${type === "full" ? "w-screen" : ""}
-        ${classes?.dialog}
-      `}
+      className={`absolute border border-solid duration-200 ease-in flex flex-col hover:duration-75 inset-0 items-center justify-center overflow-hidden rounded-lg transition-opacity z-50 ${
+        isOpen
+          ? "opacity-1 pointer-events-auto"
+          : " opacity-0 pointer-events-none"
+      } ${type === "full" ? "h-screen w-screen" : ""} ${classes?.dialog}`}
       onKeyDown={handleKeyDown}
       ref={modalRef}
     >
